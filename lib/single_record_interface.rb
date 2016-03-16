@@ -5,7 +5,7 @@ module SingleRecordInterface
   include ActiveModel::Validations
 
   included do
-    validate :only_one_record_allowed
+    validate :only_one_record_allowed, on: :create
 
     self.attribute_names.each do |attribute_name|
       resource = self
